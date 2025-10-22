@@ -1,0 +1,27 @@
+openapi: 3.0.1
+info:
+  title: HGCC API
+  version: 1.0.0
+  description: API công khai cung cấp danh sách ngành học của trường HGCC
+servers:
+  - url: https://api.hgcc.edu.vn
+paths:
+  /phonghoc:
+    get:
+      summary: Lấy danh sách phòng học
+      responses:
+        '200':
+          description: Thành công
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ma_phong:
+                      type: string
+                    ten_phong:
+                      type: string
+                    ma_khoi_nha:
+                      type: string
